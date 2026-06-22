@@ -1,43 +1,41 @@
-# Javascript-from-Basic
+# Frontend Core Concepts
 
-Beginner-friendly JavaScript examples, practices, and simple projects.
-This repository helps you learn JavaScript step by step with hands-on exercises.
+Beginner-friendly **HTML, CSS, and JavaScript** examples, exercises, and mini projects.
+This repository helps you learn frontend development step by step through hands-on practice.
 
 ## 📁 Folder Structure
 
-```
-Javascript-from-basic/
-├── Practices & Exercises/   # JavaScript practice files, examples, and basic concepts
-└── Simple Projects/         # Small demo projects to apply what you've learned
+```bash
+frontend-core-concepts/
+├── HTML_CSS/      # HTML & CSS examples, exercises, and projects
+└── JavaScript/    # JavaScript concepts, practices, and mini projects
 ```
 
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/debug-node/Javascript-from-basic.git
-cd Javascript-from-basic
+git clone https://github.com/debug-node/frontend-core-concepts.git
+cd frontend-core-concepts
 ```
 
-Open the files in your editor. Run them in Node.js or in your browser depending on the code.
+Open the files in your editor and run them in your browser or Node.js depending on the code.
 
-## 📚 What You’ll Learn
+## 📚 What You'll Learn
 
-- Variables, data types, operators  
-- Conditions and loops  
-- Functions  
-- Arrays & Objects (in practice files) 
-- Basic DOM/HTML interaction (if present in examples)  
-- Mini projects to improve understanding
+- HTML Fundamentals
+- CSS Basics, Flexbox & Grid
+- Forms and Tables
+- JavaScript Basics
+- DOM Manipulation
+- Browser Events
+- Mini Projects
 
 ## 🤝 Contributing
 
-Fork the repo, create a branch, commit your changes, and open a pull request.
+Fork the repository, create a branch, commit your changes, and open a pull request.
 
-## 📄 License
+## 👨‍💻 Author
 
-This project is released under the MIT License.
-You are free to use, modify, and share the code (see the LICENSE file).
+- **debug-node**
 
-## 🧑‍💻 Author
-
--   **debug-node**
+⭐ Learning by building and practicing.
