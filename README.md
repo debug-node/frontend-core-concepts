@@ -5,7 +5,7 @@ This repository helps you learn frontend development step by step through hands-
 
 ## 📁 Folder Structure
 
-```bash
+```text
 frontend-core-concepts/
 ├── HTML_CSS/      # HTML & CSS examples, exercises, and projects
 └── JavaScript/    # JavaScript concepts, practices, and mini projects
