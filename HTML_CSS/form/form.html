@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Application Form</title>
+		<style>
+			/* Page background & text */
+			body {
+				font-family: "Segoe UI", Arial, sans-serif;
+				background: linear-gradient(135deg, #74abe2, #5563de);
+				color: #333;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding-top: 40px;
+				margin: 0;
+			}
+
+			/* Title */
+			h1 {
+				color: #fff;
+				font-size: 30px;
+				margin-bottom: 30px;
+				text-align: center;
+			}
+
+			/* Form card */
+			form {
+				background: #fff;
+				padding: 30px;
+				border-radius: 12px;
+				box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+				width: 360px;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				transition: all 0.3s ease;
+			}
+
+			form:hover {
+				transform: scale(1.01);
+				box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+			}
+
+			/* Each form group */
+			.form-group {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+				font-size: 15px;
+				font-weight: 600;
+			}
+
+			/* Inputs, select, textarea */
+			input[type="text"],
+			input[type="file"],
+			select,
+			textarea {
+				padding: 10px 12px;
+				border: 1px solid #ccc;
+				border-radius: 6px;
+				font-size: 14px;
+				outline: none;
+				transition:
+					border-color 0.3s ease,
+					box-shadow 0.3s ease;
+			}
+
+			input[type="text"]:focus,
+			input[type="file"]:focus,
+			select:focus,
+			textarea:focus {
+				border-color: #5563de;
+				box-shadow: 0 0 0 3px rgba(85, 99, 222, 0.2);
+			}
+
+			/* Radio & checkbox styling */
+			input[type="radio"],
+			input[type="checkbox"] {
+				margin-right: 6px;
+				accent-color: #5563de; /* modern browsers */
+			}
+
+			/* Textarea */
+			textarea {
+				resize: vertical;
+			}
+
+			/* Select dropdown */
+			select {
+				cursor: pointer;
+			}
+
+			/* Submit button */
+			button[type="submit"] {
+				background: #5563de;
+				color: #fff;
+				border: none;
+				border-radius: 6px;
+				padding: 12px;
+				font-size: 16px;
+				cursor: pointer;
+				transition:
+					background 0.3s ease,
+					transform 0.3s ease;
+			}
+
+			button[type="submit"]:hover {
+				background: #3942a3;
+				transform: translateY(-2px);
+			}
+
+			/* Responsive */
+			@media (max-width: 400px) {
+				form {
+					width: 90%;
+					padding: 20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Apply for Sigma Web Dev</h1>
+
+		<form method="post" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="username">Enter Username</label>
+				<input type="text" id="username" name="username" placeholder="Enter your name" required />
+			</div>
+
+			<div class="form-group">
+				<span>Gender:</span>
+				<label><input type="radio" name="gender" value="male" /> Male</label>
+				<label><input type="radio" name="gender" value="female" /> Female</label>
+			</div>
+
+			<div class="form-group">
+				<label><input type="checkbox" name="subscribe" value="yes" /> Subscribe to YouTube</label>
+			</div>
+
+			<div class="form-group">
+				<label for="fileSelect">Upload File</label>
+				<input type="file" name="fileSelect" id="fileSelect" />
+			</div>
+
+			<div class="form-group">
+				<label for="comment">Enter Comment</label>
+				<textarea name="comment" id="comment" rows="4" placeholder="Write your comment here..."></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="fruits">Select a Fruit</label>
+				<select name="fruits" id="fruits">
+					<option value="">--Choose an option--</option>
+					<option value="apple">Apple</option>
+					<option value="banana">Banana</option>
+					<option value="mango">Mango</option>
+				</select>
+			</div>
+
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>

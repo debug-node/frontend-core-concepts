@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Animation Shorthand Improved</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background-color: beige;
+      border: 5px solid black;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box, .box2 {
+      width: 20vw;
+      height: 80px;
+      background-color: blue;
+      border: 3px solid yellow;
+      border-radius: 10px;
+      margin: 10px;
+      position: absolute;
+    }
+
+    .box {
+      top: 0;
+      left: 0;
+      animation: rightMovement 5s linear 2s infinite alternate both;
+    }
+
+    .box2 {
+      top: 80%;
+      left: 80%;
+      animation: leftMovement 5s ease-in 1s infinite alternate;
+    }
+
+    @keyframes rightMovement {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(80vw);
+      }
+    }
+
+    @keyframes leftMovement {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(-80vw);
+      }
+    }
+
+    #circle {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      border: 3px solid yellow;
+      border-radius: 50%;
+      position: absolute;
+      animation: circleMovement 10s ease-in-out 0s infinite alternate-reverse;
+    }
+
+    @keyframes circleMovement {
+      0% {
+        top: 5%;
+        left: 5%;
+      }
+      30% {
+        top: 10%;
+        left: 85%;
+      }
+      60% {
+        top: 70%;
+        left: 10%;
+      }
+      100% {
+        top: 75%;
+        left: 85%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div id="circle"></div>
+    <div class="box2"></div>
+  </div>
+</body>
+</html>

@@ -41,3 +41,15 @@ Chapter 8 = 1. innerHTML, outerHTML
             6. setInterval and setTimeout
             7. Browser Events
             8. Handling Browser Events
+
+Chapter 9 = 1. Introduction to Callbacks
+            2. Callback Hell & Pyramid of Doom
+            3. Introduction to Promises
+            4. Promise.then() and .catch()
+            5. Promise Chaining.then() calls
+            6. Attaching Multiple Handlers to Promise
+            7. The Promise API
+            8. Async/Await
+            9. Error Handling: try and catch
+            10. The Error Object & Custom Errors
+            11. The Finally Clause

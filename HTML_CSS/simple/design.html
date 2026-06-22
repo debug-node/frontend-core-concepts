@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="https://img.icons8.com/?size=64&id=MD2JyNfGzQDq&format=png"
+			type="image/x-icon" />
+		<title>Note App</title>
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+			}
+
+			body {
+				width: 100vw;
+				height: 100vh;
+				background: #373b44;
+				/* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #4286f4, #373b44);
+				/* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #4286f4, #373b44);
+				/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* padding: 15px; */
+			}
+
+			.container {
+				padding: 20px;
+				/* margin: 10px; */
+				width: 70%;
+				max-width: 500px;
+				height: 200px;
+				border-radius: 10px;
+				background-color: white;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				/* Added for smooth hover effect */
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
+			}
+
+			.container:hover {
+				transform: scale(1.05);
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.253);
+			}
+
+			h2 {
+				/* padding-left: 25px; */
+				margin-bottom: 30px;
+				font-size: 28px;
+				font-weight: 600;
+				align-self: flex-start;
+				color: #4286f4;
+			}
+
+			.box {
+				height: 2.8rem;
+				width: 100%;
+				border: none;
+				background-color: rgb(219, 221, 223);
+				border-radius: 30px;
+				display: flex;
+				/* justify-content: space-between; */
+				overflow: hidden;
+			}
+
+			input[type="text"] {
+				flex: 1;
+				border: none;
+				outline: none;
+				padding: 0 15px;
+				font-size: 16px;
+				background: transparent;
+			}
+
+			button {
+				background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
+			}
+
+			button {
+				width: 20%;
+				border: none;
+				font-size: 16px;
+				font-weight: bold;
+				cursor: pointer;
+				text-align: center;
+				text-transform: uppercase;
+				transition: 0.5s;
+				background-size: 200% auto;
+				color: white;
+				border-radius: 30px;
+				display: block;
+			}
+
+			button:hover {
+				background-position: right center;
+				/* change the direction of the change here */
+				color: #770e0e;
+				text-decoration: none;
+			}
+
+			form {
+				display: flex;
+				flex: 1;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h2>To-Do List</h2>
+			<div class="box">
+				<form>
+					<input type="text" placeholder="Add your task" required />
+					<button type="submit">Add</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

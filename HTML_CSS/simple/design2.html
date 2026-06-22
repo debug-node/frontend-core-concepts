@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="https://img.icons8.com/?size=64&id=MD2JyNfGzQDq&format=png"
+			type="image/x-icon" />
+		<title>Note App</title>
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+			}
+			body {
+				width: 100vw;
+				height: 100vh;
+				background: linear-gradient(to right, #4286f4, #373b44);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.container {
+				padding: 20px;
+				width: 70%;
+				max-width: 500px;
+				border-radius: 10px;
+				background-color: white;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
+			}
+			.container:hover {
+				transform: scale(1.05);
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.253);
+			}
+			h2 {
+				margin-bottom: 30px;
+				font-size: 28px;
+				font-weight: 600;
+				align-self: flex-start;
+				color: #4286f4;
+			}
+			.box {
+				height: 2.8rem;
+				width: 100%;
+				background-color: rgb(219, 221, 223);
+				border-radius: 30px;
+				display: flex;
+				overflow: hidden;
+				margin-bottom: 20px;
+			}
+			input[type="text"] {
+				flex: 1;
+				border: none;
+				outline: none;
+				padding: 0 15px;
+				font-size: 16px;
+				background: transparent;
+			}
+			button {
+				width: 20%;
+				border: none;
+				font-size: 16px;
+				font-weight: bold;
+				cursor: pointer;
+				text-align: center;
+				text-transform: uppercase;
+				transition: 0.5s;
+				background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
+				background-size: 200% auto;
+				color: white;
+				border-radius: 30px;
+			}
+			button:hover {
+				background-position: right center;
+				color: #770e0e;
+			}
+			form {
+				display: flex;
+				flex: 1;
+			}
+			ul {
+				width: 100%;
+				list-style: none;
+				padding: 0;
+			}
+			li {
+				background: #f3f3f3;
+				padding: 10px 15px;
+				margin: 8px 0;
+				border-radius: 8px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			li button {
+				width: auto;
+				padding: 5px 10px;
+				background: #ff4747;
+				border: none;
+				color: white;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			li button:hover {
+				background: #d63030;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>To-Do List</h2>
+			<div class="box">
+				<form id="todo-form">
+					<input type="text" id="task-input" placeholder="Add your task" required />
+					<button type="submit">Add</button>
+				</form>
+			</div>
+			<ul id="task-list"></ul>
+		</div>
+
+		<script>
+			const form = document.getElementById("todo-form");
+			const input = document.getElementById("task-input");
+			const taskList = document.getElementById("task-list");
+
+			// Load tasks from localStorage
+			document.addEventListener("DOMContentLoaded", loadTasks);
+
+			// Add task
+			form.addEventListener("submit", function (e) {
+				e.preventDefault();
+				const taskText = input.value.trim();
+				if (taskText !== "") {
+					addTask(taskText);
+					saveTask(taskText);
+					input.value = "";
+				}
+			});
+
+			// Add task to DOM
+			function addTask(text) {
+				const li = document.createElement("li");
+				li.textContent = text;
+
+				const deleteBtn = document.createElement("button");
+				deleteBtn.textContent = "Delete";
+				deleteBtn.addEventListener("click", function () {
+					li.remove();
+					removeTask(text);
+				});
+
+				li.appendChild(deleteBtn);
+				taskList.appendChild(li);
+			}
+
+			// Save task to localStorage
+			function saveTask(task) {
+				let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+				tasks.push(task);
+				localStorage.setItem("tasks", JSON.stringify(tasks));
+			}
+
+			// Load tasks from localStorage
+			function loadTasks() {
+				let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+				tasks.forEach((task) => addTask(task));
+			}
+
+			// Remove task from localStorage
+			function removeTask(task) {
+				let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+				tasks = tasks.filter((t) => t !== task);
+				localStorage.setItem("tasks", JSON.stringify(tasks));
+			}
+		</script>
+	</body>
+</html>

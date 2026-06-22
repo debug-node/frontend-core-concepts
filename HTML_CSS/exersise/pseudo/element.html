@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pseudo-Elements Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      line-height: 1.6;
+    }
+
+    /* First-letter styling */
+    .fancy-paragraph::first-letter {
+      font-size: 2em;
+      color: crimson;
+      font-weight: bold;
+    }
+
+    /* Selection styling */
+    .fancy-paragraph::selection {
+      background-color: yellow;
+      color: black;
+    }
+
+    /* Decorative quotes using ::before and ::after */
+    .quote::before {
+      content: "❝";
+      color: gray;
+      font-size: 24px;
+      margin-right: 4px;
+    }
+
+    .quote::after {
+      content: "❞";
+      color: gray;
+      font-size: 24px;
+      margin-left: 4px;
+    }
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      color: royalblue;
+      border-bottom: 1px dashed royalblue;
+    }
+
+    /* Tooltip text */
+    .tooltip::after {
+      content: "This is a CSS-only tooltip!";
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      font-size: 14px;
+    }
+
+    .tooltip:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>::first-letter & ::selection</h2>
+  <p class="fancy-paragraph">
+    This paragraph starts with a big red letter and highlights yellow when selected.
+  </p>
+
+  <h2>::before & ::after</h2>
+  <p class="quote">CSS makes styling fun and powerful!</p>
+
+  <h2>CSS Tooltip with ::after</h2>
+  <p>Hover over this <span class="tooltip">text</span> to see a tooltip!</p>
+
+</body>
+</html>
